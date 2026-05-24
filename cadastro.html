@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Crie sua conta no Projeto Bicho — ONG de proteção animal de Bandeirantes/PR. Junte-se à nossa missão de salvar vidas.">
+  <title>Cadastro — Projeto Bicho</title>
+  <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+
+  <main class="pagina-autenticacao">
+
+    <section class="imagem-autenticacao" aria-label="Imagem de animal resgatado">
+      <img src="img/auth-bg.png"
+        alt="Pessoa segurando um filhote de cachorro resgatado, transmitindo carinho e esperança"
+        class="imagem-autenticacao-foto" loading="eager">
+      <blockquote class="imagem-autenticacao-citacao">
+        Cada vida importa. Faça parte dessa missão.
+      </blockquote>
+    </section>
+
+    <section class="painel-form-autenticacao" aria-label="Formulário de cadastro">
+
+      <a href="index.html" class="voltar-autenticacao" aria-label="Voltar ao site principal">
+        <span class="voltar-autenticacao-seta" aria-hidden="true">←</span>
+        Voltar ao site
+      </a>
+
+      <div class="container-form-autenticacao">
+
+        <h1 class="form-autenticacao-titulo">Crie sua conta</h1>
+        <p class="form-autenticacao-subtitulo">
+          Junte-se ao Projeto Bicho e ajude a salvar vidas.
+        </p>
+
+        <form class="form-autenticacao" action="login.html" method="GET">
+
+          <div class="form-group">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" autocomplete="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" autocomplete="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(43) 99999-0000" autocomplete="tel" required>
+          </div>
+
+          <div class="form-group">
+            <label for="cidade">Cidade</label>
+            <select id="cidade" name="cidade" required>
+              <option value="" disabled selected>Selecione sua cidade</option>
+              <option value="bandeirantes">Bandeirantes</option>
+              <option value="cornelio-procopio">Cornélio Procópio</option>
+              <option value="outra">Outra</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="ajuda">Como deseja ajudar?</label>
+            <select id="ajuda" name="ajuda" required>
+              <option value="" disabled selected>Como deseja ajudar?</option>
+              <option value="voluntario">Voluntário</option>
+              <option value="lar-temporario">Lar Temporário</option>
+              <option value="doador">Doador</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" placeholder="Crie uma senha segura"
+              autocomplete="new-password" required>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            Cadastrar
+          </button>
+
+        </form>
+
+        <p class="form-autenticacao-footer">
+          Já tem uma conta? <a href="login.html">Faça login</a>
+        </p>
+        <img src="img/icons/paw-solid-full.svg" alt="" class="pata-autenticacao svg-icon svg-primary"
+          aria-hidden="true">
+
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>

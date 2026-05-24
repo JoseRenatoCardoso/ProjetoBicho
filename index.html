@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Projeto Bicho — ONG de proteção animal em Bandeirantes/PR. Resgatamos, tratamos e encontramos lares para animais em situação de vulnerabilidade.">
+  <meta name="author" content="DevBicho">
+  <meta name="theme-color" content="#E8734A">
+  <title>Projeto Bicho — Proteção Animal em Bandeirantes/PR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <header class="navbar" role="banner">
+    <div class="container">
+      <a href="index.html" class="navbar-logo" aria-label="Projeto Bicho — Página Inicial">
+        <img src="img/logoprojbicho.png" alt="Logo Projeto Bicho" style="height: 40px; width: auto; margin-right: 8px;">
+        Projeto Bicho
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="navbar-botao-mobile sr-only" aria-label="Abrir menu de navegação">
+      <label for="nav-toggle" class="navbar-menu-hamburguer" aria-label="Menu" role="button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <label for="nav-toggle" class="navbar-fundo-escuro" aria-hidden="true"></label>
+
+      <nav class="navbar-menu" role="navigation" aria-label="Navegação principal">
+        <a href="#quem-somos" class="navbar-link">Quem Somos</a>
+        <a href="#servicos" class="navbar-link">O que Fazemos</a>
+        <a href="#adote" class="navbar-link">Adote</a>
+        <a href="#como-ajudar" class="navbar-link">Como Ajudar</a>
+        <a href="#contato" class="navbar-link">Contato</a>
+        <a href="cadastro.html" class="btn btn--accent navbar-cta">Faça Parte</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="hero" aria-label="Apresentação principal">
+      <div class="hero-conteudo">
+        <h1 class="hero-titulo">Todo animal merece um lar</h1>
+        <p class="hero-subtitulo">
+          Resgatamos, tratamos e encontramos famílias para animais em situação de vulnerabilidade na região de
+          Bandeirantes e Norte Pioneiro do Paraná.
+        </p>
+        <div class="hero-acoes">
+          <a href="#adote" class="btn btn--primary">Quero Adotar</a>
+          <a href="#como-ajudar" class="btn btn--outline">Como Ajudar</a>
+        </div>
+      </div>
+
+      <div class="hero-dica-rolagem" aria-hidden="true">
+        <span>Descubra</span>
+        <img src="img/icons/arrow-down-solid-full.svg" alt="" class="svg-icon svg-white" aria-hidden="true"
+          style="width: 20px; height: 20px;">
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         QUEM SOMOS
+         ============================================================ -->
+    <section id="quem-somos" class="section section--paw-bg">
+      <div class="container">
+        <div class="quem-somos-grid">
+          <div class="quem-somos-texto">
+            <h2>Quem Somos</h2>
+            <p>
+              O <strong>Projeto Bicho</strong> é uma associação de proteção animal fundada em Bandeirantes, no Norte
+              Pioneiro do Paraná. Somos uma equipe <strong>100% voluntária</strong>, movida pelo amor e pela urgência de
+              cuidar de quem não pode pedir ajuda.
+            </p>
+            <p>
+              Não temos abrigo próprio. Funcionamos por meio de uma <strong>rede de lares temporários</strong>, onde
+              cada animal resgatado é acolhido com carinho até encontrar uma família definitiva. Realizamos resgates,
+              tratamentos veterinários, campanhas de castração e adoções responsáveis.
+            </p>
+            <a href="#servicos" class="btn btn--secondary">Saiba mais</a>
+          </div>
+          <figure class="quem-somos-imagem">
+            <img src="img/about.png"
+              alt="Voluntários do Projeto Bicho cuidando de animais resgatados em Bandeirantes, Paraná">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         O QUE FAZEMOS (SERVIÇOS)
+         ============================================================ -->
+    <section id="servicos" class="section" style="background: var(--color-surface);">
+      <div class="container">
+        <div class="section-cabecalho">
+          <h2 class="section-titulo">O que Fazemos</h2>
+          <p class="section-subtitulo">
+            Atuamos em diversas frentes para proteger e dar dignidade a animais em situação de vulnerabilidade na nossa
+            região.
+          </p>
+        </div>
+
+        <div class="servicos-grid">
+
+          <article class="card-servico">
+            <div class="card-servico-icone">
+              <img src="img/icons/paw-solid-full.svg" alt="" class="svg-icon svg-primary" aria-hidden="true"
+                style="width: 30px; height: 30px;">
+            </div>
+            <h3 class="card-servico-titulo">Resgate</h3>
+            <p class="card-servico-descricao">
+              Atendemos chamados de animais em situação de maus-tratos, abandono e atropelamento em Bandeirantes e
+              região.
+            </p>
+          </article>
+
+          <article class="card-servico">
+            <div class="card-servico-icone">
+              <img src="img/icons/briefcase-medical-solid-full.svg" alt="" class="svg-icon svg-primary"
+                aria-hidden="true" style="width: 30px; height: 30px;">
+            </div>
+            <h3 class="card-servico-titulo">Tratamento Veterinário</h3>
+            <p class="card-servico-descricao">
+              Garantimos atendimento médico completo: consultas, cirurgias, vacinas e recuperação para cada animal
+              resgatado.
+            </p>
+          </article>
+
+          <article class="card-servico">
+            <div class="card-servico-icone">
+              <img src="img/icons/house-regular-full.svg" alt="" class="svg-icon svg-primary" aria-hidden="true"
+                style="width: 30px; height: 30px;">
+            </div>
+            <h3 class="card-servico-titulo">Lares Temporários</h3>
+            <p class="card-servico-descricao">
+              Nossa rede de famílias voluntárias acolhe animais até encontrarem um lar definitivo, oferecendo amor e
+              segurança.
+            </p>
+          </article>
+
+          <article class="card-servico">
+            <div class="card-servico-icone">
+              <img src="img/icons/heart-pulse-solid-full.svg" alt="" class="svg-icon svg-primary" aria-hidden="true"
+                style="width: 30px; height: 30px;">
+            </div>
+            <h3 class="card-servico-titulo">Adoção Responsável</h3>
+            <p class="card-servico-descricao">
+              Conduzimos um processo criterioso de adoção com entrevista e acompanhamento para garantir o bem-estar do
+              animal.
+            </p>
+          </article>
+
+          <article class="card-servico">
+            <div class="card-servico-icone">
+              <img src="img/icons/scissors-solid-full.svg" alt="" class="svg-icon svg-primary" aria-hidden="true"
+                style="width: 30px; height: 30px;">
+            </div>
+            <h3 class="card-servico-titulo">Castração</h3>
+            <p class="card-servico-descricao">
+              Promovemos campanhas de castração em parceria com CastraPet Paraná e Castra+Paraná para controle
+              populacional responsável.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         ADOTE (ANIMAIS PARA ADOÇÃO)
+         ============================================================ -->
+    <section id="adote" class="section section--alt">
+      <div class="container">
+        <div class="section-cabecalho">
+          <h2 class="section-titulo">Adote um Amigo</h2>
+          <p class="section-subtitulo">
+            Conheça alguns dos nossos peludos que estão prontos para encontrar uma família cheia de amor.
+          </p>
+        </div>
+
+        <div class="adocao-grid">
+
+          <article class="card-animal">
+            <div class="card-animal-imagem">
+              <img src="img/animals/dog-1.png"
+                alt="Mel, cachorra vira-lata caramelo de porte médio, sorridente e acolhedora">
+              <span class="badge badge--success card-animal-badge">
+                <img src="img/icons/check-solid-full.svg" alt="" class="svg-icon svg-success" aria-hidden="true"
+                  style="width: 14px; height: 14px;">
+                Disponível
+              </span>
+            </div>
+            <div class="card-animal-informacoes">
+              <h3 class="card-animal-nome">Mel</h3>
+              <div class="card-animal-detalhes">
+                <span class="card-animal-detalhe">
+                  <img src="img/icons/paw-solid-full.svg" alt="" class="svg-icon svg-muted" aria-hidden="true"
+                    style="width: 16px; height: 16px;">
+                  Cachorra — Vira-lata caramelo
+                </span>
+                <span class="card-animal-detalhe">
+                  <img src="img/icons/clock-regular-full.svg" alt="" class="svg-icon svg-primary-light"
+                    aria-hidden="true" style="width: 16px; height: 16px;">
+                  3 anos
+                </span>
+                <span class="card-animal-detalhe">
+                  <img src="img/icons/user-regular-full.svg" alt="" class="svg-icon svg-primary-light"
+                    aria-hidden="true" style="width: 16px; height: 16px;">
+                  Porte médio
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-animal">
+            <div class="card-animal-imagem">
+              <img src="img/animals/dog-2.png"
+                alt="Pretinha, cachorra filhote de 4 meses, pelagem escura, porte pequeno">
+              <span class="badge badge--success card-animal-badge">
+                <img src="img/icons/check-solid-full.svg" alt="" class="svg-icon svg-success" aria-hidden="true"
+                  style="width: 14px; height: 14px;">
+                Disponível
+              </span>
+            </div>
+            <div class="card-animal-informacoes">
+              <h3 class="card-animal-nome">Pretinha</h3>
+              <div class="card-animal-detalhes">
+                <span class="card-animal-detalhe">
+                  <img src="img/icons/paw-solid-full.svg" alt="" class="svg-icon svg-muted" aria-hidden="true"
+                    style="width: 16px; height: 16px;">
+                  Cachorra — Sem raça definida
+                </span>
+                <span class="card-animal-detalhe">
+                  <img src="img/icons/clock-regular-full.svg" alt="" class="svg-icon svg-primary-light"
+                    aria-hidden="true" style="width: 16px; height: 16px;">
+                  4 meses
+                </span>
+                <span class="card-animal-detalhe">
+                  <img src="img/icons/user-regular-full.svg" alt="" class="svg-icon svg-primary-light"
+                    aria-hidden="true" style="width: 16px; height: 16px;">
+                  Porte pequeno
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-animal">
+            <div class="card-animal-imagem">
+              <img src="img/animals/cat-1.png" alt="Mostarda, gato laranja adulto de 2 anos, relaxado e dócil">
+              <span class="badge badge--success card-animal-badge">
+                <img src="img/icons/check-solid-full.svg" alt="" class="svg-icon svg-success" aria-hidden="true"
+                  style="width: 14px; height: 14px;">
+                Disponível
+              </span>
+            </div>
+            <div class="card-animal-informacoes">
+              <h3 class="card-animal-nome">Mostarda</h3>
+              <div class="card-animal-detalhes">
+                <span class="card-animal-detalhe">
+                  <img src="img/icons/paw-solid-full.svg" alt="" class="svg-icon svg-muted" aria-hidden="true"
+                    style="width: 16px; height: 16px;">
+                  Gato — Laranja
+                </span>
+                <span class="card-animal-detalhe">
+                  <img src="img/icons/clock-regular-full.svg" alt="" class="svg-icon svg-primary-light"
+                    aria-hidden="true" style="width: 16px; height: 16px;">
+                  2 anos
+                </span>
+                <span class="card-animal-detalhe">
+                  <img src="img/icons/user-regular-full.svg" alt="" class="svg-icon svg-primary-light"
+                    aria-hidden="true" style="width: 16px; height: 16px;">
+                  Porte médio
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-animal">
+            <div class="card-animal-imagem">
+              <img src="img/animals/cat-2.png" alt="Meia, gatinha filhote preto e branco de 3 meses, pequena e curiosa">
+              <span class="badge badge--success card-animal-badge">
+                <img src="img/icons/check-solid-full.svg" alt="" class="svg-icon svg-success" aria-hidden="true"
+                  style="width: 14px; height: 14px;">
+                Disponível
+              </span>
+            </div>
+            <div class="card-animal-informacoes">
+              <h3 class="card-animal-nome">Meia</h3>
+              <div class="card-animal-detalhes">
+                <span class="card-animal-detalhe">
+                  <img src="img/icons/paw-solid-full.svg" alt="" class="svg-icon svg-muted" aria-hidden="true"
+                    style="width: 16px; height: 16px;">
+                  Gata — Preto e branco
+                </span>
+                <span class="card-animal-detalhe">
+                  <img src="img/icons/clock-regular-full.svg" alt="" class="svg-icon svg-primary-light"
+                    aria-hidden="true" style="width: 16px; height: 16px;">
+                  3 meses
+                </span>
+                <span class="card-animal-detalhe">
+                  <img src="img/icons/user-regular-full.svg" alt="" class="svg-icon svg-primary-light"
+                    aria-hidden="true" style="width: 16px; height: 16px;">
+                  Porte pequeno
+                </span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="adocao-cta">
+          <a href="#" class="btn btn--secondary">Ver mais animais</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         COMO AJUDAR
+         ============================================================ -->
+    <section id="como-ajudar" class="section section--paw-bg" style="background: var(--color-surface);">
+      <div class="container">
+        <div class="section-cabecalho">
+          <h2 class="section-titulo">Como Ajudar</h2>
+          <p class="section-subtitulo">
+            Existem muitas formas de fazer a diferença na vida de um animal. Escolha a que mais combina com você.
+          </p>
+        </div>
+
+        <div class="ajuda-layout">
+
+          <!-- DESTAQUE: Doe via PIX -->
+          <aside class="ajuda-doacao">
+            <div class="ajuda-doacao-badge">❤️ Doe</div>
+            <h3 class="ajuda-doacao-titulo">Faça uma doação via PIX</h3>
+            <p class="ajuda-doacao-descricao">
+              Sua doação financia ração, medicamentos, vacinas e tratamentos para animais resgatados. Qualquer valor faz
+              a diferença!
+            </p>
+            <div class="ajuda-doacao-qr">
+              <img src="img/PIX-ProjBicho.png" alt="QR Code PIX Projeto Bicho — escaneie para doar" loading="lazy">
+            </div>
+            <p class="ajuda-doacao-dica">Escaneie o QR Code com o app do seu banco</p>
+            <a href="cadastro.html" class="btn btn--primary ajuda-doacao-btn">Quero Ajudar Mais</a>
+          </aside>
+
+          <div class="ajuda-cards">
+
+            <article class="card-ajuda">
+              <div class="card-ajuda-icone">
+                <img src="img/icons/people-group-solid-full.svg" alt="" class="svg-icon svg-text" aria-hidden="true"
+                  style="width: 32px; height: 32px;">
+              </div>
+              <h3 class="card-ajuda-titulo">Seja Voluntário</h3>
+              <p class="card-ajuda-descricao">
+                Junte-se à nossa equipe e ajude no resgate, transporte, cuidado diário e eventos de adoção.
+              </p>
+            </article>
+
+            <article class="card-ajuda card-ajuda--dividido">
+              <div class="card-ajuda-item-dividido">
+                <div class="card-ajuda-icone card-ajuda-icone--sm">
+                  <img src="img/icons/house-regular-full.svg" alt="" class="svg-icon svg-text" aria-hidden="true"
+                    style="width: 24px; height: 24px;">
+                </div>
+                <h3 class="card-ajuda-titulo">Lar Temporário</h3>
+                <p class="card-ajuda-descricao">
+                  Acolha um animal até ele encontrar sua família. Você oferece amor, nós cuidamos do resto.
+                </p>
+              </div>
+              <div class="card-ajuda-divisor" aria-hidden="true"></div>
+              <div class="card-ajuda-item-dividido">
+                <div class="card-ajuda-icone card-ajuda-icone--sm card-ajuda-icone--heart">
+                  <img src="img/icons/heart-pulse-solid-full.svg" alt="" class="svg-icon svg-primary-light"
+                    aria-hidden="true" style="width: 24px; height: 24px;">
+                </div>
+                <h3 class="card-ajuda-titulo">Adote</h3>
+                <p class="card-ajuda-descricao">
+                  Dê um lar definitivo a um dos nossos peludos e transforme duas vidas de uma vez.
+                </p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <div class="ajuda-cta">
+          <a href="cadastro.html" class="btn btn--accent">Faça Parte</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         CONTATO
+         ============================================================ -->
+    <section id="contato" class="section section--alt">
+      <div class="container">
+        <div class="contato-grid">
+
+          <div class="contato-informacoes">
+            <h2>Fale Conosco</h2>
+            <p>
+              Está precisando de ajuda com um animal? Quer ser voluntário ou tem dúvidas? Entre em contato conosco e
+              vamos conversar. Respondemos o mais rápido possível.
+            </p>
+
+            <h3 class="contato-titulo-redes">Nossas redes sociais</h3>
+            <div class="contato-lista-redes">
+              <a href="https://www.instagram.com/projeto.bicho" target="_blank" rel="noopener noreferrer"
+                class="contato-link-rede" aria-label="Instagram do Projeto Bicho">
+                <img src="img/icons/instagram-brands-solid-full.svg" alt="" class="svg-icon svg-primary"
+                  aria-hidden="true" style="width: 20px; height: 20px;">
+                @projeto.bicho
+              </a>
+              <a href="https://www.facebook.com/bicho.projeto" target="_blank" rel="noopener noreferrer"
+                class="contato-link-rede" aria-label="Facebook do Projeto Bicho">
+                <img src="img/icons/facebook-brands-solid-full.svg" alt="" class="svg-icon svg-text" aria-hidden="true"
+                  style="width: 20px; height: 20px;">
+                @bicho.projeto
+              </a>
+            </div>
+          </div>
+
+          <div class="contato-wrapper-form">
+            <h3 class="contato-titulo-form">Nos mande uma mensagem</h3>
+            <form action="#" method="POST" class="contato-form">
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Nome</label>
+                <input type="text" id="contact-name" name="name" class="form-input" required autocomplete="name"
+                  placeholder="Seu nome completo">
+              </div>
+              <div class="form-group">
+                <label for="contact-email" class="form-label">E-mail</label>
+                <input type="email" id="contact-email" name="email" class="form-input" required autocomplete="email"
+                  placeholder="seu@email.com">
+              </div>
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Mensagem</label>
+                <textarea id="contact-message" name="message" class="form-textarea" required
+                  placeholder="Como podemos ajudar?"></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary form-submit">Enviar Mensagem</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-coluna">
+          <h4 class="footer-titulo-coluna">Navegação</h4>
+          <ul class="footer-lista">
+            <li><a href="#quem-somos" class="footer-link">Quem Somos</a></li>
+            <li><a href="#servicos" class="footer-link">O que Fazemos</a></li>
+            <li><a href="#adote" class="footer-link">Adote</a></li>
+            <li><a href="#como-ajudar" class="footer-link">Como Ajudar</a></li>
+            <li><a href="#contato" class="footer-link">Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-coluna">
+          <h4 class="footer-titulo-coluna">Redes Sociais</h4>
+          <div class="footer-lista-redes">
+            <a href="https://www.instagram.com/projeto.bicho" target="_blank" rel="noopener noreferrer"
+              class="footer-link-rede" aria-label="Instagram do Projeto Bicho">
+              <img src="img/icons/instagram-brands-solid-full.svg" alt="" class="svg-icon svg-primary-light"
+                aria-hidden="true" style="width: 20px; height: 20px;">
+              @projeto.bicho
+            </a>
+            <a href="https://www.facebook.com/bicho.projeto" target="_blank" rel="noopener noreferrer"
+              class="footer-link-rede" aria-label="Facebook do Projeto Bicho">
+              <img src="img/icons/facebook-brands-solid-full.svg" alt="" class="svg-icon svg-primary-light"
+                aria-hidden="true" style="width: 20px; height: 20px;">
+              @bicho.projeto
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-coluna">
+          <h4 class="footer-titulo-coluna">Localização</h4>
+          <address class="footer-endereco">
+            Rodovia Tsuneto Matsubara, Km 9<br>
+            Bairro Yara<br>
+            Bandeirantes — PR<br>
+            CEP 86.360-000
+          </address>
+        </div>
+
+        <div class="footer-coluna">
+          <h4 class="footer-titulo-coluna">Equipe DevBicho</h4>
+          <ul class="footer-lista">
+            <li><a href="https://joserenatocardoso.github.io/Curriculum-Vitae/" class="footer-link" target="_blank"
+                rel="noopener noreferrer">José Renato Cardoso de Campos</a></li>
+            <li><a href="https://lucaspagnan01.github.io/atvdfrontend/" class="footer-link" target="_blank"
+                rel="noopener noreferrer">Lucas Vieira Pagnan</a></li>
+            <li><a href="https://augustoosa.github.io/Atividade_pratica_CV_com_CSS/" class="footer-link" target="_blank"
+                rel="noopener noreferrer">Augusto da Silva de Sá</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-base">
+        <p class="footer-direitos">
+          &copy; 2026 Projeto Bicho. Desenvolvido por DevBicho.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
