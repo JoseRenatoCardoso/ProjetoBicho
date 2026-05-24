@@ -39,5 +39,5 @@ Projeto 1/
 ## 🛠️ Tecnologias e Requisitos Atendidos
 - HTML5: Utilização de tags semânticas estruturais:```<header>, <nav>, <main>, <section>, <footer>, <figure>, <article> ```.
 - CSS3: Estilização com propriedades customizadas (variáveis), layout flexível com CSS Flexbox e Grid, e responsividade via Media Queries.
-- Ícones e Tipografia: Uso de SVGs inline e duas fontes externas importadas do Google Fonts (DM Sans e Fraunces).
+- Ícones e Tipografia: Duas fontes externas importadas do Google Fonts (DM Sans e Fraunces).
 - Validação: Código-fonte validado pelos serviços oficiais da W3C (HTML e CSS).
