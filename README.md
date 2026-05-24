@@ -37,7 +37,7 @@ Projeto 1/
 - Ao efetuar o login, o usuário retorna à Página Principal (index.html).
 
 ## 🛠️ Tecnologias e Requisitos Atendidos
-- HTML5: Utilização de tags semânticas estruturais: <header>, <nav>, <main>, <section>, <footer>, <figure>, <article>.
+- HTML5: Utilização de tags semânticas estruturais:```text <header>, <nav>, <main>, <section>, <footer>, <figure>, <article> ```.
 - CSS3: Estilização com propriedades customizadas (variáveis), layout flexível com CSS Flexbox e Grid, e responsividade via Media Queries.
 - Ícones e Tipografia: Uso de SVGs inline e duas fontes externas importadas do Google Fonts (DM Sans e Fraunces).
 - Validação: Código-fonte validado pelos serviços oficiais da W3C (HTML e CSS).
