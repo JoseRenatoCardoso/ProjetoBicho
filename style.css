@@ -667,13 +667,6 @@ strong {
   overflow: hidden;
 }
 
-.ajuda-doacao::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="160" cy="40" r="80" fill="rgba(255,255,255,0.05)"/><circle cx="20" cy="160" r="60" fill="rgba(255,255,255,0.04)"/></svg>') no-repeat center/cover;
-  pointer-events: none;
-}
 
 .ajuda-doacao-badge {
   display: inline-flex;
@@ -1287,30 +1280,6 @@ strong {
   border: 0;
 }
 
-.section--paw-bg {
-  position: relative;
-}
-
-.section--paw-bg::before {
-  content: '';
-  display: none;
-  position: absolute;
-  top: 40px;
-  right: 0;
-  width: 120px;
-  height: 120px;
-  opacity: 0.04;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%233D2B1F' d='M226.5 92.9c14.3 42.9-.3 86.2-32.6 96.8s-70.1-15.6-84.4-58.5s.3-86.2 32.6-96.8s70.1 15.6 84.4 58.5zM100.4 198.6c18.9 32.4 14.3 70.1-10.2 84.1s-59.7-.9-78.5-33.3S-2.7 179.3 21.8 165.3s59.7 .9 78.5 33.3zM69.2 401.2C121.6 259.9 214.7 224 256 224s134.4 35.9 186.8 177.2c3.6 9.7 5.2 20.1 5.2 30.5v.1c0 34.5-27.9 62.2-62.2 62.2c-15.2 0-29.8-5.5-41.2-15.4l-42.3-36.6c-8.5-7.4-19.3-11.4-30.4-11.4s-21.9 4-30.4 11.4l-42.3 36.6c-11.4 9.9-26 15.4-41.2 15.4C123.9 494 96 466.3 96 431.8v-.1c0-10.4 1.6-20.8 5.2-30.5zM421.8 282.7c-24.5-14-29.1-51.7-10.2-84.1s54-47.3 78.5-33.3s29.1 51.7 10.2 84.1s-54 47.3-78.5 33.3zM310.1 189.7c-32.3-10.6-46.9-53.9-32.6-96.8s52.1-69.1 84.4-58.5s46.9 53.9 32.6 96.8s-52.1 69.1-84.4 58.5z'/%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
-  pointer-events: none;
-}
-
-@media (min-width: 768px) {
-  .section--paw-bg::before {
-    display: block;
-  }
-}
 
 .svg-icon {
   display: inline-block;
