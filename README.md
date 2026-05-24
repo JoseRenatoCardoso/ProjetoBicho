@@ -13,7 +13,7 @@ O tema escolhido atende ao **ODS 15 (Vida Terrestre)** e busca solucionar o prob
 - **Augusto da Silva de Sá** — [Currículo](https://augustoosa.github.io/Atividade_pratica_CV_com_CSS/)
 
 ## 🔗 Links Importantes
-- **Página Publicada (GitHub Pages):** [COLE O LINK DO GITHUB PAGES AQUI]
+- **Página Publicada (GitHub Pages):** [https://joserenatocardoso.github.io/ProjetoBicho/](https://joserenatocardoso.github.io/ProjetoBicho/)
 - **Vídeo de Apresentação da Equipe:** [COLE O LINK DO YOUTUBE/DRIVE DO VÍDEO AQUI]
 
 ## 📂 Estrutura do Projeto e Navegação
