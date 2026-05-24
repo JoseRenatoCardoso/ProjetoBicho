@@ -14,7 +14,7 @@ O tema escolhido atende ao **ODS 15 (Vida Terrestre)** e busca solucionar o prob
 
 ## 🔗 Links Importantes
 - **Página Publicada (GitHub Pages):** [https://joserenatocardoso.github.io/ProjetoBicho/](https://joserenatocardoso.github.io/ProjetoBicho/)
-- **Vídeo de Apresentação da Equipe:** [COLE O LINK DO YOUTUBE/DRIVE DO VÍDEO AQUI]
+- **Vídeo de Apresentação da Equipe:** [https://youtu.be/70H9JkYvSQE](https://youtu.be/70H9JkYvSQE)
 
 ## 📂 Estrutura do Projeto e Navegação
 O projeto conta com o seguinte fluxo e estrutura de arquivos:
