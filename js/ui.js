@@ -83,7 +83,10 @@ function mostrarModal(titulo, mensagem, callbackConfirmar) {
     overlay.classList.add('modal-saindo');
     card.classList.add('modal-card-saindo');
 
-    card.addEventListener('animationend', function () {
+    var concluido = false;
+    function finalizar() {
+      if (concluido) return;
+      concluido = true;
       if (container.contains(overlay)) {
         container.removeChild(overlay);
       }
@@ -91,7 +94,10 @@ function mostrarModal(titulo, mensagem, callbackConfirmar) {
       if (elementoAnterior && elementoAnterior.focus) {
         elementoAnterior.focus();
       }
-    }, { once: true });
+    }
+
+    card.addEventListener('animationend', finalizar, { once: true });
+    setTimeout(finalizar, 300); // Fallback seguro
   }
 
   // ── Eventos de fechar ──
@@ -223,9 +229,15 @@ function animarSaida(elemento) {
   return new Promise(function (resolve) {
     elemento.classList.add('fadeOutRight');
 
-    elemento.addEventListener('animationend', function () {
+    var concluido = false;
+    function finalizar() {
+      if (concluido) return;
+      concluido = true;
       elemento.classList.remove('fadeOutRight');
       resolve();
-    }, { once: true });
+    }
+
+    elemento.addEventListener('animationend', finalizar, { once: true });
+    setTimeout(finalizar, 300); // Fallback seguro
   });
 }

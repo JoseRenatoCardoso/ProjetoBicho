@@ -71,12 +71,13 @@ function validarNome(nome) {
     return { valido: false, erro: 'O nome não pode ultrapassar 100 caracteres.' };
   }
 
-  // Bloqueia caracteres perigosos que podem ser usados em ataques de injeção
-  var caracteresProibidos = /[<>"';()\{\}\\/]/;
-  if (caracteresProibidos.test(nome)) {
+  // Permitir apenas letras, espaços e caracteres acentuados comuns.
+  // Isso bloqueia símbolos como @ e previne injeção HTML/XSS.
+  var regexLetras = /^[a-zA-ZÀ-ÿ\s]+$/;
+  if (!regexLetras.test(nome)) {
     return {
       valido: false,
-      erro: 'O nome contém caracteres não permitidos (< > " \' ; ( ) { } \\ /).'
+      erro: 'O nome deve conter apenas letras e espaços.'
     };
   }
 
