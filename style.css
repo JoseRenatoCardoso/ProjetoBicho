@@ -1308,3 +1308,20 @@ strong {
 .svg-white {
   filter: brightness(0) saturate(100%) invert(100%);
 }
+
+/* ── Navbar Admin ── */
+.navbar-adm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast), opacity var(--transition-fast);
+  opacity: 0.5;
+}
+
+.navbar-adm:hover {
+  background: rgba(61, 43, 31, 0.06);
+  opacity: 1;
+}
