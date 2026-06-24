@@ -299,10 +299,10 @@ function limparFormulario() {
 
 
 // ─────────────────────────────────────────────────────────────
-// INICIALIZAÇÃO (DOMContentLoaded)
+// INICIALIZAÇÃO DO PAINEL
 // ─────────────────────────────────────────────────────────────
 
-document.addEventListener('DOMContentLoaded', function () {
+function inicializarPainel() {
 
   // ── Cachear referências DOM ──
   formulario     = document.getElementById('form-adm');
@@ -330,4 +330,89 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Pesquisa por nome com debounce de 300 ms
   campoPesquisa.addEventListener('input', debounce(pesquisar, 300));
-});
+}
+
+// ─────────────────────────────────────────────────────────────
+// AUTENTICAÇÃO DE ACESSO
+// ─────────────────────────────────────────────────────────────
+
+/**
+ * Converte uma string em um hash SHA-256 (retorna Promise com string hex).
+ * Usa a Web Crypto API nativa do navegador.
+ */
+function gerarHashSHA256(mensagem) {
+  var encoder = new TextEncoder();
+  var dados = encoder.encode(mensagem);
+  
+  return crypto.subtle.digest('SHA-256', dados).then(function (hashBuffer) {
+    var hashArray = Array.from(new Uint8Array(hashBuffer));
+    var hashHex = hashArray.map(function(b) {
+      return b.toString(16).padStart(2, '0');
+    }).join('');
+    return hashHex;
+  });
+}
+
+/**
+ * Inicializa a tela de login e bloqueia a inicialização do painel
+ * até que o usuário seja autenticado corretamente.
+ */
+function inicializarAutenticacao() {
+  var overlay = document.getElementById('login-overlay');
+  var painel = document.getElementById('painel-principal');
+  var formLogin = document.getElementById('form-login-adm');
+  var inputUsuario = document.getElementById('login-usuario');
+  var inputSenha = document.getElementById('login-senha');
+
+  // Hash pré-calculado da senha
+  var HASH_SENHA = '1bbd6095bff5a9086da47d5e3e3fc4ff63bf2f41b063ff83b1b870b003cc4af1';
+  var USUARIO_CORRETO = 'DevBicho';
+
+  // Se já está autenticado na sessão atual, libera acesso imediatamente
+  if (sessionStorage.getItem('admAuth') === 'true') {
+    overlay.style.display = 'none';
+    painel.style.display = '';
+    inicializarPainel();
+    return;
+  }
+
+  // Foca no primeiro campo do login
+  inputUsuario.focus();
+
+  // Lida com a submissão do login
+  formLogin.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    var usuario = inputUsuario.value.trim();
+    var senha = inputSenha.value;
+
+    if (usuario !== USUARIO_CORRETO) {
+      mostrarNotificacao('Credenciais inválidas.', 'erro');
+      inputSenha.value = '';
+      return;
+    }
+
+    // Calcula o hash da senha digitada e compara
+    gerarHashSHA256(senha).then(function(hashDigitado) {
+      if (hashDigitado === HASH_SENHA) {
+        // Sucesso: salva na sessão e libera o painel
+        sessionStorage.setItem('admAuth', 'true');
+        overlay.classList.add('modal-saindo');
+        
+        setTimeout(function() {
+          overlay.style.display = 'none';
+          painel.style.display = '';
+          inicializarPainel();
+          mostrarNotificacao('Acesso liberado!', 'sucesso');
+        }, 300); // Tempo da animação de saída
+      } else {
+        mostrarNotificacao('Credenciais inválidas.', 'erro');
+        inputSenha.value = '';
+      }
+    }).catch(function() {
+      mostrarNotificacao('Erro ao validar credenciais.', 'erro');
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', inicializarAutenticacao);

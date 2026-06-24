@@ -751,7 +751,8 @@ h6 {
    MODAL DE CONFIRMAÇÃO
    ============================================================ */
 
-.modal-overlay {
+.modal-overlay,
+.login-overlay {
   position: fixed;
   inset: 0;
   background: rgba(61, 43, 31, 0.5);

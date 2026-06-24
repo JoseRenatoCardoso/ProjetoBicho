@@ -12,7 +12,29 @@
 
 <body>
 
-  <main class="pagina-autenticacao">
+  <!-- ── Overlay de Login (Autenticação do Administrador) ── -->
+  <div id="login-overlay" class="login-overlay">
+    <div class="modal-card">
+      <h2 class="modal-titulo">Acesso Restrito</h2>
+      <p class="modal-mensagem" style="margin-bottom: var(--space-md);">Insira suas credenciais para acessar o painel de administração.</p>
+      
+      <form id="form-login-adm" class="form-autenticacao" aria-label="Login de Administrador">
+        <div class="form-group">
+          <label for="login-usuario">Usuário</label>
+          <input type="text" id="login-usuario" placeholder="Ex: DevBicho" required>
+        </div>
+        <div class="form-group">
+          <label for="login-senha">Senha</label>
+          <input type="password" id="login-senha" placeholder="••••••••" required>
+        </div>
+        <div class="form-botoes" style="margin-top: var(--space-md);">
+          <button type="submit" class="btn-submit" style="width: 100%;">Entrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <main class="pagina-autenticacao" id="painel-principal" style="display: none;">
 
     <!-- ── Lado esquerdo: imagem de fundo ── -->
     <section class="imagem-autenticacao" aria-label="Imagem de animal resgatado">
