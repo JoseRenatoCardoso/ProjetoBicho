@@ -175,11 +175,18 @@ function mostrarNotificacao(mensagem, tipo) {
   setTimeout(function () {
     notificacao.classList.add('notificacao-saindo');
 
-    notificacao.addEventListener('animationend', function () {
+    var removido = false;
+    function removerNotificacao() {
+      if (removido) return;
+      removido = true;
       if (container.contains(notificacao)) {
         container.removeChild(notificacao);
       }
-    }, { once: true });
+    }
+
+    notificacao.addEventListener('animationend', removerNotificacao, { once: true });
+    // Fallback: garante remoção mesmo se animationend não disparar
+    setTimeout(removerNotificacao, 500);
   }, 3000);
 }
 

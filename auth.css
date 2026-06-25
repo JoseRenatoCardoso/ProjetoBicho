@@ -889,14 +889,14 @@ h6 {
   padding: var(--space-md) var(--space-lg);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
-  animation: slideInRight var(--transition-base) ease forwards;
+  animation: slideInRight var(--transition-base) forwards;
   pointer-events: auto;
   min-width: 240px;
   max-width: 360px;
 }
 
 .notificacao-saindo {
-  animation: slideOutRight var(--transition-base) ease forwards;
+  animation: slideOutRight var(--transition-base) forwards;
 }
 
 .notificacao--sucesso {
