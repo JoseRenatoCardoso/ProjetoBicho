@@ -14,7 +14,6 @@
 
   <main class="pagina-autenticacao">
 
-    <!-- ── Lado esquerdo: imagem de fundo ── -->
     <section class="imagem-autenticacao" aria-label="Imagem de animal resgatado">
       <img src="img/auth-bg.png"
         alt="Pessoa segurando um filhote de cachorro resgatado, transmitindo carinho e esperança"
@@ -24,7 +23,6 @@
       </blockquote>
     </section>
 
-    <!-- ── Lado direito: painel administrativo ── -->
     <section class="painel-form-autenticacao painel-adm" aria-label="Painel de administração">
 
       <a href="index.html" class="voltar-autenticacao" aria-label="Voltar ao site principal">
@@ -39,7 +37,6 @@
           Gerencie os usuários cadastrados no Projeto Bicho.
         </p>
 
-        <!-- ── Formulário de cadastro ── -->
         <form class="form-autenticacao" id="form-adm" aria-label="Cadastrar novo usuário">
 
           <div class="form-group">
@@ -65,7 +62,6 @@
 
         </form>
 
-        <!-- ── Seção de pesquisa ── -->
         <div class="secao-pesquisa" role="search" aria-label="Pesquisar usuários">
           <input type="text" id="campo-pesquisa" class="campo-pesquisa" placeholder="Pesquisar por nome..."
             aria-label="Pesquisar por nome">
@@ -74,11 +70,9 @@
           </button>
         </div>
 
-        <!-- ── Lista de usuários ── -->
         <ul id="lista-usuarios" class="lista-usuarios" aria-label="Lista de usuários cadastrados"></ul>
         <p id="lista-vazia" class="lista-vazia">Nenhum usuário cadastrado.</p>
 
-        <!-- ── Decoração ── -->
         <img src="img/icons/paw-solid-full.svg" alt="" class="pata-autenticacao svg-icon svg-primary"
           aria-hidden="true">
 
@@ -88,13 +82,10 @@
 
   </main>
 
-  <!-- ── Modal de confirmação (preenchido via JS) ── -->
   <div id="modal-container"></div>
 
-  <!-- ── Notificações toast ── -->
   <div id="notificacao-container" class="notificacao-container" aria-live="polite"></div>
 
-  <!-- ── Scripts ── -->
   <script src="js/storage.js"></script>
   <script src="js/ui.js"></script>
   <script src="js/adm.js"></script>

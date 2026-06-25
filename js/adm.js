@@ -1,34 +1,4 @@
-/**
- * ============================================================
- * adm.js — Script principal da página de Administração
- * Projeto Bicho · ONG de proteção animal
- * ============================================================
- *
- * Orquestra os módulos storage.js (dados) e ui.js (interface)
- * para implementar a lógica completa do painel administrativo:
- *   - Cadastro de usuários (formulário)
- *   - Listagem dinâmica com animações
- *   - Exclusão individual com confirmação modal
- *   - Exclusão em massa com confirmação modal
- *   - Pesquisa por nome com debounce (300 ms)
- *
- * Segurança OWASP:
- *   - ZERO uso de innerHTML — somente createElement + textContent
- *   - Dados do usuário sempre exibidos via textContent (anti-XSS)
- *   - Validação delegada ao storage.js; erros tratados aqui
- *
- * Dependências (globais, carregadas antes deste script):
- *   - storage.js  →  CRUD + sanitização + validação
- *   - ui.js       →  modal, notificação, animações
- *
- * ============================================================
- */
-
 'use strict';
-
-// ─────────────────────────────────────────────────────────────
-// REFERÊNCIAS DOM (cacheadas na inicialização)
-// ─────────────────────────────────────────────────────────────
 
 /** @type {HTMLFormElement}   */ var formulario;
 /** @type {HTMLInputElement}  */ var inputNome;
@@ -40,18 +10,14 @@
 /** @type {HTMLParagraphElement} */ var listaVazia;
 
 
-// ─────────────────────────────────────────────────────────────
-// UTILITÁRIO: DEBOUNCE
-// ─────────────────────────────────────────────────────────────
-
 /**
  * Cria uma versão "debounced" de uma função: a execução real
  * só ocorre após o período de espera transcorrer sem que a
  * função seja invocada novamente.
  *
- * @param {Function} func   — Função a ser adiada
- * @param {number}   espera — Tempo de espera em milissegundos
- * @returns {Function} — Versão debounced da função
+ * @param {Function} func
+ * @param {number}   espera
+ * @returns {Function}
  */
 function debounce(func, espera) {
   var temporizador = null;
@@ -115,25 +81,20 @@ function renderizarLista(usuarios) {
   for (var i = 0; i < usuarios.length; i++) {
     var usuario = usuarios[i];
 
-    // ── <li> ──
     var li = document.createElement('li');
     li.setAttribute('data-id', usuario.id);
 
-    // ── <div class="lista-item-dados"> ──
     var divDados = document.createElement('div');
     divDados.classList.add('lista-item-dados');
 
-    // Data de cadastro
     var spanData = document.createElement('span');
     spanData.classList.add('lista-item-data');
     spanData.textContent = formatarData(usuario.dataCadastro);
 
-    // Nome (textContent protege contra XSS)
     var spanNome = document.createElement('span');
     spanNome.classList.add('lista-item-nome');
     spanNome.textContent = usuario.nome;
 
-    // E-mail (textContent protege contra XSS)
     var spanEmail = document.createElement('span');
     spanEmail.classList.add('lista-item-email');
     spanEmail.textContent = usuario.email;
@@ -142,26 +103,21 @@ function renderizarLista(usuarios) {
     divDados.appendChild(spanNome);
     divDados.appendChild(spanEmail);
 
-    // ── Botão excluir ──
     var btnExcluir = document.createElement('button');
     btnExcluir.classList.add('btn-excluir-item');
     btnExcluir.type = 'button';
     btnExcluir.title = 'Excluir usuário';
     btnExcluir.setAttribute('aria-label', 'Excluir ' + usuario.nome);
     btnExcluir.textContent = '✕';
-
-    // Closure via IIFE para capturar id e nome do loop
     (function (id, nome) {
       btnExcluir.addEventListener('click', function () {
         confirmarExcluirItem(id, nome);
       });
     })(usuario.id, usuario.nome);
 
-    // ── Monta o <li> ──
     li.appendChild(divDados);
     li.appendChild(btnExcluir);
 
-    // Adiciona à <ul> e anima a entrada
     listaUsuarios.appendChild(li);
     animarEntrada(li);
   }
@@ -305,19 +261,19 @@ function limparFormulario() {
 document.addEventListener('DOMContentLoaded', function () {
 
   // ── Cachear referências DOM ──
-  formulario     = document.getElementById('form-adm');
-  inputNome      = document.getElementById('adm-nome');
-  inputEmail     = document.getElementById('adm-email');
-  btnLimpar      = document.getElementById('btn-limpar');
-  campoPesquisa  = document.getElementById('campo-pesquisa');
+  formulario = document.getElementById('form-adm');
+  inputNome = document.getElementById('adm-nome');
+  inputEmail = document.getElementById('adm-email');
+  btnLimpar = document.getElementById('btn-limpar');
+  campoPesquisa = document.getElementById('campo-pesquisa');
   btnExcluirTodos = document.getElementById('btn-excluir-todos');
-  listaUsuarios  = document.getElementById('lista-usuarios');
-  listaVazia     = document.getElementById('lista-vazia');
+  listaUsuarios = document.getElementById('lista-usuarios');
+  listaVazia = document.getElementById('lista-vazia');
 
   // ── Renderizar lista inicial a partir do Local Storage ──
   renderizarLista();
 
-  // ── Registrar event listeners ──
+  //Registrar event listeners
 
   // Formulário de cadastro
   formulario.addEventListener('submit', cadastrarUsuario);

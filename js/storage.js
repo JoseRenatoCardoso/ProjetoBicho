@@ -1,27 +1,8 @@
-/**
- * ============================================================
- * storage.js — Módulo de gerenciamento de dados (Local Storage)
- * Projeto Bicho · ONG de proteção animal
- * ============================================================
- *
- * Responsável por cadastrar, listar, excluir e pesquisar
- * usuários, persistindo tudo no Local Storage do navegador.
- *
- * Segurança: segue diretrizes OWASP — sanitização de entradas,
- * validação rigorosa, ausência de innerHTML/eval/document.write.
- *
- * Dependências externas: NENHUMA (vanilla JS puro).
- * ============================================================
- */
-
 'use strict';
 
 /** Chave única usada no Local Storage para armazenar os usuários */
 var STORAGE_KEY = 'usuarios';
 
-// ─────────────────────────────────────────────────────────────
-// FUNÇÕES DE SEGURANÇA (OWASP)
-// ─────────────────────────────────────────────────────────────
 
 /**
  * Sanitiza uma string de entrada removendo qualquer tag HTML,
@@ -86,7 +67,7 @@ function validarNome(nome) {
 
 /**
  * Valida o e-mail do usuário com regex RFC 5322 simplificada.
- * - Máximo 254 caracteres (limite prático de endereços de e-mail)
+ * Máximo 254 caracteres
  *
  * @param {string} email — E-mail já sanitizado
  * @returns {{ valido: boolean, erro?: string }}
@@ -104,7 +85,7 @@ function validarEmail(email) {
     return { valido: false, erro: 'O e-mail não pode ultrapassar 254 caracteres.' };
   }
 
-  // Regex RFC 5322 simplificada — cobre a grande maioria dos endereços válidos
+  // Regex RFC 5322 simplificada
   var regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
   if (!regexEmail.test(email)) {
@@ -114,16 +95,13 @@ function validarEmail(email) {
   return { valido: true };
 }
 
-// ─────────────────────────────────────────────────────────────
-// FUNÇÕES DE FORMATAÇÃO
-// ─────────────────────────────────────────────────────────────
 
 /**
  * Converte uma string ISO 8601 para o formato brasileiro dd/mm/aaaa hh:mm.
  * Usa padStart para garantir dois dígitos em dia, mês, hora e minuto.
  *
- * @param {string} isoString — Data no formato ISO (ex.: 2026-06-23T21:50:00.000Z)
- * @returns {string} — Data formatada (ex.: 23/06/2026 21:50)
+ * @param {string} isoString
+ * @returns {string}
  */
 function formatarData(isoString) {
   if (typeof isoString !== 'string') {
@@ -241,8 +219,8 @@ function adicionarUsuario(nome, email) {
 /**
  * Remove um usuário específico pelo seu ID único.
  *
- * @param {string} id — UUID do usuário a ser removido
- * @returns {boolean} — true se encontrou e removeu, false caso contrário
+ * @param {string} id
+ * @returns {boolean}
  */
 function excluirUsuario(id) {
   if (typeof id !== 'string' || id.length === 0) {
@@ -280,8 +258,8 @@ function excluirTodosUsuarios() {
  * Pesquisa usuários cujo nome contenha o termo informado.
  * A busca é parcial (substring) e case-insensitive.
  *
- * @param {string} termo — Texto de busca
- * @returns {Array<Object>} — Usuários que correspondem à pesquisa
+ * @param {string} termo
+ * @returns {Array<Object>}
  */
 function pesquisarPorNome(termo) {
   var termoLimpo = sanitizarInput(termo);
